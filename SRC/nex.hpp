@@ -8,11 +8,10 @@
 #include <iostream>
 #include <limits>
 #include <memory>
-#include <optional>
 
 namespace utl
 {
-inline std::optional<size_t> __check_exp_bits ( size_t total_bits )
+inline size_t __check_exp_bits ( size_t total_bits )
 {
     switch ( total_bits )
     {
@@ -20,7 +19,7 @@ inline std::optional<size_t> __check_exp_bits ( size_t total_bits )
         case 32uz: return 8uz;
         case 64uz: return 11uz;
         case 128uz: return 15uz;
-        default: return std::nullopt;
+        default: return 0uz;
     }
 }
 }
